@@ -16,12 +16,21 @@ class Hypernova::BlankRenderer
 
   attr_reader :job
 
+  ESCAPED_CHARS = {
+    "\u2028" => '\u2028',
+    "\u2029" => '\u2029',
+    ">"      => '\u003e',
+    "<"      => '\u003c',
+    "&"      => '\u0026',
+  }
+
+
   def data
     job[:data]
   end
 
   def encode
-    JSON.generate(data).gsub(/&/, '&amp;').gsub(/>/, '&gt;')
+    JSON.generate(data).gsub(/[\u2028\u2029><&]/u, ESCAPED_CHARS)
   end
 
   def key
