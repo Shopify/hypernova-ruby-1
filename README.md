@@ -1,3 +1,5 @@
+> **This repository is no longer maintained.** It has been archived by Shopify and receives no updates or security fixes.
+
 # hypernova-ruby [![Build Status](https://travis-ci.org/airbnb/hypernova-ruby.svg)](https://travis-ci.org/airbnb/hypernova-ruby)
 
 > A Ruby client for the Hypernova service
